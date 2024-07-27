@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vocab_vault/core/constants/app_sizes.dart';
 import 'package:vocab_vault/core/helpers/app_assets.dart';
 import 'package:vocab_vault/core/styles/app_colors.dart';
 import 'package:vocab_vault/core/styles/app_text_styles.dart';
@@ -13,8 +14,15 @@ class StartedScreen extends StatelessWidget {
       body: Column(
         children: [
           Flexible(
-            flex: 3,
-            child: Center(child: AppAssets.started),
+            flex: 5,
+            child: Center(
+              child: Stack(
+                children: [
+                  AppAssets.startedPhone,
+                  AppAssets.startedBackground,
+                ],
+              ),
+            ),
           ),
           Flexible(
             flex: 2,
@@ -22,7 +30,7 @@ class StartedScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "Welcome to Vocab Vault",
+                    'Vocab Vault',
                     style: AppTextStyles.headlineMedium,
                   ),
                   Text(
@@ -31,13 +39,21 @@ class StartedScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/home');
+                      // TODO: Navigate to the home screen
                     },
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.thunderstorm),
-                        Text("Get Started"),
+                        const Icon(
+                          Icons.thunderstorm,
+                          color: AppColors.darkGrey,
+                        ),
+                        gapW8,
+                        Text(
+                          "Get Started",
+                          style: AppTextStyles.lableLarge
+                              .copyWith(color: AppColors.darkGrey),
+                        ),
                       ],
                     ),
                   )
