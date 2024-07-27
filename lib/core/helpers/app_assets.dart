@@ -4,5 +4,5 @@ class AppAssets {
   static const baseDirImage = 'assets/images/';
   static const baseDirVector = 'assets/vectors/';
 
-  SvgPicture get started => SvgPicture.asset('${baseDirVector}started.svg');
+  static get started => SvgPicture.asset('${baseDirVector}started.svg');
 }
